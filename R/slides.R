@@ -28,7 +28,7 @@ copy_file <- function(source, dest, pattern) {
 
 # render slide to html
 
-render_slide <- function(name = ".Rmd", docs = "docs",
+render_slide <- function(name = ".qmd", docs = "docs",
                           slides = "slides", ext = ".css|.html",
                           includes = "libs|figures", folder = F) {
 
@@ -36,7 +36,7 @@ render_slide <- function(name = ".Rmd", docs = "docs",
 
   purrr::map(here::here(files), rmarkdown::render)
 
-  if (folder == F & name != ".Rmd") {
+  if (folder == F & name != ".qmd") {
     copy_file(docs, slides, ext)
   } else {
     copy_folder(docs, slides, includes)
@@ -47,7 +47,7 @@ render_slide <- function(name = ".Rmd", docs = "docs",
 # open documents
 open_doc <- function(name, docs = "docs") {
 
-  rstudioapi::navigateToFile(here::here(docs, paste0(name, ".Rmd")))
+  rstudioapi::navigateToFile(here::here(docs, paste0(name, ".qmd")))
 
 }
 

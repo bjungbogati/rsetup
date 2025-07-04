@@ -11,14 +11,11 @@ Encoding: UTF-8
 LazyData: true
 Imports:
     tidyverse, 
-    devtools, 
     usethis, 
-    rmarkdown, 
     utils, 
     rstudioapi, 
     fs, 
     tools, 
     readxl,
     writexl, 
-    readxl, 
     here
