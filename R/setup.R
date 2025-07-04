@@ -5,11 +5,20 @@ get_course <- function(url_path, set_path) {
 
   # if (require(rsetup)) { remove.packages("rsetup") }
 
-  usethis::use_course(
-    url = url_path,
+  # usethis::use_course(
+  #   url = url_path,
+  #   destdir = set_path,
+  #   cleanup = TRUE
+  # )
+
+
+  usethis::use_zip(
+    url= url_path,
     destdir = set_path,
     cleanup = TRUE
   )
+
+
 }
 
 # get course from url and activate the project
