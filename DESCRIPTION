@@ -17,4 +17,5 @@ Imports:
     fs, 
     tools, 
     writexl, 
-    here
+    here,
+    R.utils

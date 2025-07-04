@@ -18,9 +18,7 @@ set_project <- function(url_path, set_path) {
 
   rsetup::get_course(url_path, set_path)
 
-  # usethis::proj_activate(set_path)
-
-  usethis::proj_set(set_path, force = TRUE)
+  usethis::proj_activate(set_path)
 }
 
 # get project path from user
