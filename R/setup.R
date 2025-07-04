@@ -24,7 +24,7 @@ get_course <- function(url_path, set_path) {
 set_project <- function(url_path, set_path) {
   # Check if .Rproj exists, otherwise download course
 
-    rsetup::get_course(url_path, set_path)
+  rsetup::get_course(url_path, set_path)
 
   # Normalize paths for comparison
   current_path <- normalizePath(here::here(), winslash = "/", mustWork = FALSE)
