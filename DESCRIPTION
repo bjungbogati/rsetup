@@ -1,0 +1,24 @@
+Package: rsetup
+Type: Package
+Title: R setup package for training course
+Version: 0.1.1
+Authors@R: c(
+    person("Binod Jung", "Bogati", email = "contact@bjungbogati.com.np", role = "cre")
+    )
+Description: R training course setup
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Imports:
+    tidyverse, 
+    devtools, 
+    usethis, 
+    rmarkdown, 
+    utils, 
+    rstudioapi, 
+    fs, 
+    tools, 
+    readxl,
+    writexl, 
+    readxl, 
+    here
