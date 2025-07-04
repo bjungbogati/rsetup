@@ -7,7 +7,8 @@ get_course <- function(url_path, set_path) {
 
   usethis::use_course(
     url = url_path,
-    destdir = set_path
+    destdir = set_path,
+    cleanup = TRUE
   )
 }
 
