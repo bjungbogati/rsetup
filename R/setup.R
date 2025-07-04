@@ -9,14 +9,6 @@ get_course <- function(url_path, set_path) {
     url = url_path,
     destdir = set_path
   )
-
-  # usethis::use_zip(
-  #   url= url_path,
-  #   destdir = set_path,
-  #   cleanup = TRUE
-  # )
-
-
 }
 
 # get course from url and activate the project
