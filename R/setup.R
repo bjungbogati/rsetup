@@ -12,14 +12,38 @@ get_course <- function(url_path, set_path) {
 }
 
 # get course from url and activate the project
+# set_project <- function(url_path, set_path) {
+#
+#   # usethis::create_project(dir)
+#   rsetup::get_course(url_path, set_path)
+#
+#   usethis::proj_activate(set_path)
+# }
+
+
 set_project <- function(url_path, set_path) {
+  # Check if .Rproj exists, otherwise download course
 
-  # usethis::create_project(dir)
+    rsetup::get_course(url_path, set_path)
 
-  rsetup::get_course(url_path, set_path)
+  # Normalize paths for comparison
+  current_path <- normalizePath(here::here(), winslash = "/", mustWork = FALSE)
+  target_path  <- normalizePath(set_path, winslash = "/", mustWork = FALSE)
 
-  usethis::proj_activate(set_path)
+  if (current_path != target_path) {
+    # If no project is currently active (blank RStudio), activate in new session
+    if (is.null(usethis::proj_get(FALSE))) {
+      usethis::proj_activate(set_path)
+    } else {
+      # Otherwise just switch project in the same session
+      usethis::proj_set(set_path, force = TRUE)
+    }
+  } else {
+    message("Project already active at: ", target_path)
+  }
 }
+
+
 
 # get project path from user
 set_path <- function() {
