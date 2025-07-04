@@ -32,15 +32,12 @@ set_project <- function(url_path, set_path) {
 
   if (current_path != target_path) {
     # If no project is currently active (blank RStudio), activate in new session
-    if (is.null(usethis::proj_get(FALSE))) {
       usethis::proj_activate(set_path)
     } else {
       # Otherwise just switch project in the same session
       usethis::proj_set(set_path, force = TRUE)
     }
-  } else {
-    message("Project already active at: ", target_path)
-  }
+
 }
 
 
