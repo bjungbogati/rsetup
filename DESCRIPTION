@@ -16,6 +16,5 @@ Imports:
     rstudioapi, 
     fs, 
     tools, 
-    readxl,
     writexl, 
     here
